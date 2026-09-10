@@ -30,15 +30,14 @@ name = input("Enter your name: ")
 # Remember that input() returns a string.
 
 age = 0
-age = int(input("Enter your age: "))
+
 # TODO:
 # Print:
 # Hello, <name>!
 # Next year you will be <age + 1> years old.
-print(f"Hello, {name}!")
-print(f"Next year you will be {age + 1} years old.")
 
 
+print()
 
 
 # ============================================================
@@ -52,22 +51,22 @@ print("Task 2 — Rectangle")
 
 width = 0.0
 height = 0.0
-width = float(input("width: "))
-height = float(input("height: "))
+
 # TODO:
 # Calculate the area.
 
 area = 0.0
-area = width * height
+
 # TODO:
 # Calculate the perimeter.
 
 perimeter = 0.0
-perimeter = 2 * (width + height)
 
 # TODO:
-print(f"Area: {area}")
-print(f"Perimeter: {perimeter}")
+# Print the results.
+
+
+print()
 
 
 # ============================================================
@@ -83,17 +82,18 @@ print("Task 3 — Temperature Converter")
 # Read Celsius temperature.
 
 celsius = 0.0
-celsius = float(input("Enter temperature in celsius: "))
+
 # TODO:
 # Calculate Fahrenheit temperature.
 
 fahrenheit = 0.0
-fahrenheit = celsius * 9 / 5 + 32
+
 # TODO:
 # Print the result.
 
 
-print(f"Temperature in fahrenheit: {fahrenheit}")
+print()
+
 
 # ============================================================
 # Task 4 — Purchase Calculator
@@ -105,29 +105,27 @@ print("Task 4 — Purchase Calculator")
 # Ask for the number of items.
 
 quantity = 0
-quantity = int(input("Enter number of items: "))
+
 # TODO:
 # Ask for the price of one item.
 
 price = 0.0
-price = float(input("Enter price of an item: "))
 
 # TODO:
 # Calculate the total price.
 
 total_price = 0.0
-total_price = quantity * price
+
 # TODO:
 # Apply a 10% discount.
 
 discounted_price = 0.0
-discounted_price = total_price * 0.9
+
 # TODO:
 # Print both results.
 
 
-print(f"Price before discount: {total_price:.2f}")
-print(f"Price with the discount: {discounted_price:.2f}")
+print()
 
 
 # ============================================================
@@ -150,10 +148,241 @@ b = 5
 # a % b
 # a ** b
 
-print(a + b)
-print(a - b)
-print(a * b)
-print(a / b)
-print(a // b)
-print(a % b)
-print(a ** b)
+
+
+# ============================================================
+# Task 6 — Data Types
+# ============================================================
+
+print("Task 6 — Data Types")
+
+integer_value = 42
+float_value = 3.14
+complex_value = 2 + 3j
+text_value = "Python"
+boolean_value = True
+
+# TODO:
+# Use type() to print the type of every variable above.
+#
+# Example:
+# print(type(integer_value))
+
+
+print()
+
+
+# ============================================================
+# Task 7 — Comparisons and Boolean Logic
+# ============================================================
+
+print("Task 7 — Comparisons and Boolean Logic")
+
+age = 22
+is_master_student = True
+
+# TODO:
+# Print the result of the following expressions:
+#
+# age >= 18
+# age < 30
+# age == 22
+# age != 25
+#
+# age >= 18 and is_master_student
+# age < 18 or is_master_student
+# not is_master_student
+#
+# Predict each result before running the program.
+
+
+print()
+
+
+# ============================================================
+# Task 8 — Python Collections
+# ============================================================
+
+print("Task 8 — Python Collections")
+
+# TODO:
+# Create:
+#
+# 1. A list containing three programming languages.
+# 2. A tuple containing three numbers.
+# 3. A set containing several city names.
+# 4. A dictionary describing a student with:
+#       name
+#       age
+#       university
+
+programming_languages = []
+numbers = ()
+cities = set()
+student = {}
+
+# TODO:
+# Print all four variables.
+#
+# TODO:
+# Use type() to print the type of each collection.
+
+
+print()
+
+
+# ============================================================
+# Task 9 — Indexing and Slicing
+# ============================================================
+
+print("Task 9 — Indexing and Slicing")
+
+numbers = [0, 1, 2, 3, 4, 5, 6, 7]
+
+# TODO:
+# Print the first element.
+
+# TODO:
+# Print the last element.
+
+# TODO:
+# Print elements from index 1 up to index 4.
+#
+# Expected:
+# [1, 2, 3]
+
+# TODO:
+# Print every second element.
+#
+# Expected:
+# [0, 2, 4, 6]
+
+
+word = "Python"
+
+# TODO:
+# Print the first character.
+
+# TODO:
+# Print the last character.
+
+# TODO:
+# Print:
+# Pyt
+
+
+print()
+
+
+# ============================================================
+# Task 10 — Dictionaries and Membership
+# ============================================================
+
+print("Task 10 — Dictionaries and Membership")
+
+student = {
+    "name": "Anna",
+    "age": 22,
+    "city": "Novosibirsk",
+}
+
+# TODO:
+# Print the student's name.
+
+# TODO:
+# Print the student's age.
+
+# TODO:
+# Check whether "age" exists in the dictionary.
+# Print the result.
+
+# TODO:
+# Check whether "email" exists in the dictionary.
+# Print the result.
+
+
+numbers = [10, 20, 30, 40]
+
+# TODO:
+# Check whether 20 is in numbers.
+
+# TODO:
+# Check whether 50 is in numbers.
+
+
+print()
+
+
+# ============================================================
+# Task 11 — Formatted Output
+# ============================================================
+
+print("Task 11 — Formatted Output")
+
+# TODO:
+# Ask the user to enter the radius of a circle.
+
+radius = 0.0
+
+# Use:
+# area = 3.14159 * radius ** 2
+
+area = 0.0
+
+# TODO:
+# Print the radius and area using an f-string.
+#
+# Example:
+# Radius: 10.0
+# Area: 314.16
+#
+# Print the area with exactly two digits after the decimal point.
+#
+# Hint:
+# {value:.2f}
+
+
+print()
+
+
+# ============================================================
+# Task 12 — Trip Cost Calculator
+# ============================================================
+
+print("Task 12 — Trip Cost Calculator")
+
+# A car consumes a certain number of liters of fuel
+# for every 100 kilometers.
+
+# TODO:
+# Ask the user to enter:
+#
+# distance in kilometers
+# fuel consumption in liters per 100 km
+# fuel price per liter
+
+distance = 0.0
+fuel_consumption = 0.0
+fuel_price = 0.0
+
+# TODO:
+# Calculate how many liters of fuel are required.
+#
+# Formula:
+# liters_needed = distance / 100 * fuel_consumption
+
+liters_needed = 0.0
+
+# TODO:
+# Calculate the total cost of the trip.
+
+trip_cost = 0.0
+
+# TODO:
+# Print something similar to:
+#
+# Distance: 450.0 km
+# Fuel required: 36.00 liters
+# Trip cost: 2160.00
+#
+# Use f-strings and two decimal places where appropriate.
