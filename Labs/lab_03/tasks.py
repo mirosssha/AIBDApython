@@ -24,6 +24,15 @@ Use only concepts covered in Lecture 03.
 
 # Write your code below:
 
+number = int(input("enter an integer: "))
+
+if number > 0:
+    print("Positive")
+elif number < 0:
+    print("Negative")
+else:
+    print("Zero")
+
 # ============================================================
 # Task 2 — Age category
 # ============================================================
@@ -39,6 +48,16 @@ Use only concepts covered in Lecture 03.
 
 # Write your code below:
 
+age = int(input("Enter your age: "))
+
+if age < 13:
+    print("Child")
+elif age < 18:
+    print("Teenager")
+elif age < 65:
+    print("Adult")
+else:
+    print("Senior")
 
 # ============================================================
 # Task 3 — Grade classifier
@@ -58,6 +77,18 @@ Use only concepts covered in Lecture 03.
 
 # Write your code below:
 
+score = int(input("Enter score: "))
+
+if score < 0 or score > 100:
+    print("Invalid score")
+elif score >= 90:
+    print("A")
+elif score >= 75:
+    print("B")
+elif score >= 60:
+    print("C")
+else:
+    print("Fail")
 
 # ============================================================
 # Task 4 — Access decision
@@ -76,6 +107,15 @@ Use only concepts covered in Lecture 03.
 
 # Write your code below:
 
+age = int(input("Enter your age: "))
+ticket = input("Do you have a ticket? yes/no: ")
+
+if age < 18:
+    print("Must be 18 or older")
+elif ticket == "yes":
+    print("Access granted")
+else:
+    print("Ticket required")
 
 # ============================================================
 # Task 5 — Even numbers with range()
@@ -87,6 +127,8 @@ Use only concepts covered in Lecture 03.
 
 # Write your code below:
 
+for number in range(2, 31, 2):
+    print(number)
 
 # ============================================================
 # Task 6 — Sum of multiples of 3
@@ -101,7 +143,12 @@ Use only concepts covered in Lecture 03.
 # 1683
 
 # Write your code below:
+summ = 0
 
+for number in range(3, 100, 3):
+    summ += number
+
+print(summ)
 
 # ============================================================
 # Task 7 — Count number categories
@@ -118,6 +165,23 @@ numbers = [4, -2, 0, 7, -5, 9, 0, -1, 8]
 
 # Write your code below:
 
+numbers = [4, -2, 0, 7, -5, 9, 0, -1, 8]
+
+positive = 0
+negative = 0
+zero = 0
+
+for number in numbers:
+    if number > 0:
+        positive += 1
+    elif number < 0:
+        negative += 1
+    else:
+        zero += 1
+
+print(f"Positive: {positive}")
+print(f"Negative: {negative}")
+print(f"Zero: {zero}")
 
 # ============================================================
 # Task 8 — Count vowels
@@ -136,6 +200,17 @@ numbers = [4, -2, 0, 7, -5, 9, 0, -1, 8]
 # Iterate directly over the string.
 
 # Write your code below:
+
+text = input("Enter text: ")
+
+vowels = "aeiou"
+vowel_count = 0
+
+for character in text.lower():
+    if character in vowels:
+        vowel_count += 1
+
+print(vowel_count)
 
 
 # ============================================================
@@ -159,6 +234,23 @@ scores = [85, 42, 67, 91, 58, 73, 100, 39]
 
 # Write your code below:
 
+passed = 0
+failed = 0
+total = 0
+
+for score in scores:
+    total += score
+
+    if score >= 60:
+        passed += 1
+    else:
+        failed += 1
+
+average = total / len(scores)
+
+print(f"Passed: {passed}")
+print(f"Failed: {failed}")
+print(f"Average: {average:.2f}")
 
 # ============================================================
 # Task 10 — Search and stop
@@ -183,6 +275,18 @@ names = ["Anna", "Boris", "Sasha", "Maria", "Oleg", "Dina"]
 
 # Write your code below:
 
+target = input("Enter a name: ")
+
+found = False
+
+for name in names:
+    if name == target:
+        found = True
+        print("Found")
+        break
+
+if not found:
+    print("Not found")
 
 # ============================================================
 # Task 11 — Skip invalid scores
@@ -205,6 +309,22 @@ raw_scores = [78, -5, 91, 120, 66, 0, 88, 101, 54]
 
 # Write your code below:
 
+total = 0
+count = 0
+
+for score in raw_scores:
+    if score < 0 or score > 100:
+        continue
+
+    print(score)
+
+    total += score
+    count += 1
+
+average = total / count
+
+print(f"Valid scores: {count}")
+print(f"Average: {average:.2f}")
 
 # ============================================================
 # Task 12 — Dictionary iteration
@@ -229,6 +349,16 @@ student_scores = {
 
 # Write your code below:
 
+passed = 0
+
+for name, score in student_scores.items():
+    if score >= 60:
+        print(f"{name}: Pass")
+        passed += 1
+    else:
+        print(f"{name}: Fail")
+
+print(f"Passed: {passed}")
 
 # ============================================================
 # BONUS Task 13 — FizzBuzz
