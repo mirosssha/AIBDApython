@@ -52,6 +52,17 @@ mean = 0.0
 # TODO:
 # Print the results using f-strings.
 
+count = len(values)
+smallest = min(values)
+largest = max(values)
+total = sum(values)
+mean = total / count
+
+print(f"Number of values: {count}")
+print(f"Smallest value: {smallest}")
+print(f"Largest value: {largest}")
+print(f"Total: {total}")
+print(f"Mean: {mean:.2f}")
 
 print()
 
@@ -80,6 +91,11 @@ measurement = 19.87654
 #
 # Use round().
 
+print(abs(temperature_change))
+
+print(round(measurement, 1))
+print(round(measurement, 2))
+print(round(measurement, 3))
 
 print()
 
@@ -101,13 +117,13 @@ balance = 1000.0
 # TODO:
 # Replace the normal assignments below with +=, -=, and *=.
 
-balance = balance + 250
-balance = balance - 120
-balance = balance * 1.05
-
 # TODO:
 # Print the final balance with two decimal places.
+balance += 250
+balance -= 120
+balance *= 1.05
 
+print(f"Final balance: {balance:.2f}")
 
 print()
 
@@ -131,7 +147,11 @@ expression_5 = 2 ** 3 ** 2
 #
 # Example:
 # 2 + 3 * 4 = 14
-
+print(f"2 + 3 * 4 = {expression_1}")
+print(f"(2 + 3) * 4 = {expression_2}")
+print(f"20 / 5 + 3 = {expression_3}")
+print(f"20 / (5 + 3) = {expression_4}")
+print(f"2 ** 3 ** 2 = {expression_5}")
 
 print()
 
@@ -149,7 +169,7 @@ total_seconds = 0
 
 # TODO:
 # Convert the input to int.
-
+total_seconds = int(input("Enter number of seconds: "))
 # TODO:
 # Calculate:
 #
@@ -164,12 +184,13 @@ total_seconds = 0
 
 minutes = 0
 remaining_seconds = 0
-
+minutes = total_seconds // 60
+remaining_seconds = total_seconds % 60
 # TODO:
 # Print:
 # 135 seconds = 2 minute(s) and 15 second(s)
 
-
+print(f"{total_seconds} seconds = {minutes} minute(s) and {remaining_seconds} second(s)")
 print()
 
 
@@ -188,12 +209,15 @@ value = 17.95
 # Does int() round the value?
 
 integer_value = 0
+integer_value = int(value)
+print(integer_value)
 
 # TODO:
 # Convert integer_value back to float and print it.
 
 float_value = 0.0
-
+float_value = float(integer_value)
+print(float_value)
 # TODO:
 # Convert integer_value to str and print:
 #
@@ -204,6 +228,10 @@ float_value = 0.0
 
 text_value = ""
 
+text_value = str(integer_value)
+
+print(f"Value as text: {text_value}")
+print(f"Type: {type(text_value)}")
 
 print()
 
@@ -220,7 +248,7 @@ last_name = input("Last name: ")
 # TODO:
 # Create full_name using string concatenation.
 
-full_name = ""
+full_name = first_name + " " + last_name
 
 # TODO:
 # Print:
@@ -231,9 +259,15 @@ full_name = ""
 # Last character: <last character>
 # First three characters: <slice>
 
+print(f"Full name: {full_name}")
+print(f"Number of characters: {len(full_name)}")
+print(f"First character: {full_name[0]}")
+print(f"Last character: {full_name[-1]}")
+print(f"First three characters: {full_name[:3]}")
+
 # TODO:
 # Print full_name three times using string repetition.
-
+print(full_name * 3)
 
 print()
 
@@ -257,6 +291,7 @@ university = "NSU"
 # Python | AI and Big Data Analytics | NSU
 #
 # Use sep=
+print(language, course, university, sep=" | ")
 
 
 # TODO:
@@ -265,7 +300,8 @@ university = "NSU"
 # Python Programming
 #
 # Do not write "Python Programming" as one string.
-
+print("Python", end=" ")
+print("Programming")
 
 print()
 
@@ -290,7 +326,12 @@ student_university = "NSU"
 # university
 
 student = {}
-
+student = {
+    "name": student_name,
+    "age": student_age,
+    "skills": student_skills,
+    "university": student_university,
+}
 # TODO:
 # Print:
 #
@@ -300,7 +341,10 @@ student = {}
 # number of skills
 #
 # Use dictionary access, indexing, and len().
-
+print(student["name"])
+print(student["university"])
+print(student["skills"][0])
+print(len(student["skills"]))
 
 print()
 
@@ -318,12 +362,14 @@ same_numbers = numbers
 
 # TODO:
 # Change the first item in numbers to 99.
-#
+numbers[0] = 99
+
 # Then print both:
-#
+
 # numbers
 # same_numbers
-#
+print(numbers)
+print(same_numbers)
 # Observe what happened.
 
 
@@ -341,7 +387,10 @@ same_text = text
 # same_text
 #
 # Compare this result with the list example.
+text += " Course"
 
+print(text)
+print(same_text)
 
 print()
 
@@ -380,7 +429,16 @@ mean_score = 0.0
 # Mean: 82.40
 #
 # Format the mean to exactly two decimal places.
+score_count = len(scores)
+minimum_score = min(scores)
+maximum_score = max(scores)
+total_score = sum(scores)
+mean_score = total_score / score_count
 
+print(f"Number of scores: {score_count}")
+print(f"Minimum: {minimum_score}")
+print(f"Maximum: {maximum_score}")
+print(f"Mean: {mean_score:.2f}")
 
 print()
 
@@ -404,12 +462,12 @@ print("Task 12 — PEP 8 Cleanup")
 #
 # Keep the same calculation.
 
-P=1250
-Q=3
-D=10
-X=P*Q-D/100*P*Q
+price = 1250
+quantity = 3
+discount = 10
+final_price = price*quantity-discount/100*price*quantity
 
-print("Final:",X)
+print("Final:", final_price)
 
 
 print()
@@ -474,8 +532,8 @@ z = 0
 
 # TODO:
 # Print x, y, and z.
-
-
+x, y, z = 10, 20, 30
+print(x, y, z)
 # TODO:
 # Swap a and b using one Python statement.
 
@@ -486,6 +544,10 @@ b = 10
 # a = 10
 # b = 5
 
+a, b = b, a
+
+print(f"a = {a}")
+print(f"b = {b}")
 
 print()
 
@@ -521,6 +583,15 @@ text = "  Python Programming Course  "
 # startswith()
 # endswith()
 
+cleaned = text.strip()
+
+print(cleaned)
+print(cleaned.lower())
+print(cleaned.upper())
+print(cleaned.replace("Course", "Lab"))
+
+print(cleaned.startswith("Python"))
+print(cleaned.endswith("Course"))
 
 print()
 
@@ -542,6 +613,11 @@ is_master_student = True
 # score >= 60 and is_master_student
 # score < 60 or age < 18
 # not is_master_student
+print(age >= 18)
+print(score >= 60)
+print(score >= 60 and is_master_student)
+print(score < 60 or age < 18)
+print(not is_master_student)
 
 # TODO:
 # Predict and then print:
@@ -552,7 +628,12 @@ is_master_student = True
 # bool("Python")
 # bool([])
 # bool([1, 2])
-
+print(bool(0))
+print(bool(1))
+print(bool(""))
+print(bool("Python"))
+print(bool([]))
+print(bool([1, 2]))
 
 print()
 
@@ -579,5 +660,11 @@ student = {
 # "age" in student
 # "email" in student
 
+print(20 in numbers)
+print(50 not in numbers)
+print("Python" in text)
+print("Java" not in text)
+print("age" in student)
+print("email" in student)
 
 print()
