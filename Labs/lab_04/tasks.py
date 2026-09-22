@@ -32,6 +32,13 @@ Use only concepts covered in Lecture 04 and earlier lectures.
 
 # Write your code below:
 
+number = int(input("Enter a positive integer: "))
+
+while number > 0:
+    print(number)
+    number -= 1
+
+print("Go!")
 
 # ============================================================
 # Task 2 — Repeat until zero
@@ -55,6 +62,18 @@ Use only concepts covered in Lecture 04 and earlier lectures.
 
 # Write your code below:
 
+count = 0
+total = 0
+
+number = int(input("Enter an integer: "))
+
+while number != 0:
+    count += 1
+    total += number
+    number = int(input("Enter an integer: "))
+
+print(f"Count: {count}")
+print(f"Sum: {total}")
 
 # ============================================================
 # Task 3 — Valid input with while True
@@ -76,6 +95,14 @@ Use only concepts covered in Lecture 04 and earlier lectures.
 
 # Write your code below:
 
+while True:
+    number = int(input("Enter an integer from 1 to 10 "))
+
+    if number < 1 or number > 10:
+        print("Invalid value")
+    else:
+        print("Accepted")
+        break
 
 # ============================================================
 # Task 4 — continue in a while loop
@@ -91,7 +118,15 @@ Use only concepts covered in Lecture 04 and earlier lectures.
 
 # Write your code below:
 
+number = 1
 
+while number <= 20:
+    if number % 3 == 0:
+        number += 1
+        continue
+
+    print(number)
+    number += 1
 # ============================================================
 # Task 5 — Search with loop else
 # ============================================================
@@ -114,6 +149,12 @@ numbers = [4, 8, 12, 16, 21, 24]
 
 # Write your code below:
 
+for number in numbers:
+    if number % 2 != 0:
+        print(f"First odd number: {number}")
+        break
+else:
+    print("All values are even")
 
 # ============================================================
 # Task 6 — Multiplication table with nested loops
@@ -134,6 +175,11 @@ numbers = [4, 8, 12, 16, 21, 24]
 
 # Write your code below:
 
+for row in range(1, 6):
+    for column in range(1, 6):
+        print(row * column, end=" ")
+
+    print()
 
 # ============================================================
 # Task 7 — Dynamic typing
@@ -161,6 +207,17 @@ numbers = [4, 8, 12, 16, 21, 24]
 
 # Write your code below:
 
+value = 42
+print(value, type(value))
+
+value = 3.14
+print(value, type(value))
+
+value = "Python"
+print(value, type(value))
+
+value = [1, 2, 3]
+print(value, type(value))
 
 # ============================================================
 # Task 8 — Equality, identity, and references
@@ -193,6 +250,24 @@ c = a
 
 # Write your code below:
 
+a = [10, 20]
+b = [10, 20]
+c = a
+
+print(a == b)
+print(a is b)
+print(a == c)
+print(a is c)
+
+print(id(a))
+print(id(b))
+print(id(c))
+
+c.append(30)
+
+print(a)
+print(b)
+print(c)
 
 # ============================================================
 # Task 9 — Function: is_even
@@ -218,6 +293,13 @@ c = a
 
 # Write your code below:
 
+def is_even(number):
+    return number % 2 == 0
+
+
+print(is_even(4))
+print(is_even(7))
+print(is_even(0))
 
 # ============================================================
 # Task 10 — Function: calculate_discount
@@ -239,6 +321,13 @@ c = a
 
 # Write your code below:
 
+def calculate_discount(price, percent):
+    final_price = price - price * percent / 100
+    return final_price
+
+
+print(calculate_discount(1000, 15))
+print(calculate_discount(250, 20))
 
 # ============================================================
 # Task 11 — return versus print
@@ -261,6 +350,14 @@ c = a
 
 # Write your code below:
 
+def rectangle_area(width, height):
+    return width * height
+
+
+result = rectangle_area(5, 4)
+
+print(result)
+print(result * 2)
 
 # ============================================================
 # Task 12 — Function returning multiple values
@@ -282,7 +379,7 @@ c = a
 #   max()
 #
 # Test with:
-# values = [7, 2, 9, -1, 5, 12, 3]
+values = [7, 2, 9, -1, 5, 12, 3]
 #
 # Unpack the result into:
 #   smallest
@@ -291,8 +388,23 @@ c = a
 # Then print them.
 
 # Write your code below:
+def min_max(numbers):
+    smallest = numbers[0]
+    largest = numbers[0]
 
+    for number in numbers:
+        if number < smallest:
+            smallest = number
 
+        if number > largest:
+            largest = number
+
+    return smallest, largest
+
+smallest, largest = min_max(values)
+
+print(f"Smallest: {smallest}")
+print(f"Largest: {largest}")
 # ============================================================
 # Task 13 — Integrated task: validated average
 # ============================================================
@@ -329,6 +441,24 @@ c = a
 
 # Write your code below:
 
+def average(total, count):
+    if count == 0:
+        return None
+    return total / count
+
+
+while True:
+    count = int(input("Enter count: "))
+    if count >= 0:
+        break
+
+total = float(input("Enter total: "))
+result = average(total, count)
+
+if result is None:
+    print("Cannot calculate average")
+else:
+    print(f"Average: {result:.2f}")
 
 # ============================================================
 # BONUS Task 14 — Guess the number
