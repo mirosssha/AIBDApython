@@ -35,7 +35,17 @@ Use only concepts covered in Lecture 06 and earlier lectures.
 
 # Write your code below:
 
+def square(number):
+    return number ** 2
 
+
+operation = square
+
+print(square(5))
+print(operation(5))
+print(operation is square)
+
+print()
 # ============================================================
 # Task 2 — Passing a function as an argument
 # ============================================================
@@ -58,6 +68,19 @@ Use only concepts covered in Lecture 06 and earlier lectures.
 
 # Write your code below:
 
+def double(number):
+    return number * 2
+
+def triple(number):
+    return number * 3
+
+def apply(operation, value):
+    return operation(value)
+
+print(apply(double, 5))
+print(apply(triple, 5))
+
+print()
 
 # ============================================================
 # Task 3 — Higher-order function
@@ -85,7 +108,21 @@ Use only concepts covered in Lecture 06 and earlier lectures.
 
 # Write your code below:
 
+def transform(values, operation):
+    result = []
 
+    for value in values:
+        value = operation(value)
+        result.append(value)
+
+    return result
+
+def square(number):
+    return number ** 2
+
+print(transform([1, 2, 3, 4], square))
+
+print()
 # ============================================================
 # Task 4 — Lambda expressions
 # ============================================================
@@ -105,7 +142,16 @@ Use only concepts covered in Lecture 06 and earlier lectures.
 
 # Write your code below:
 
+double = lambda a: a * 2
+add = lambda a, b: a + b
+is_even = lambda a: a % 2 == 0
 
+print(double(5))
+print(add(3, 4))
+print(is_even(8))
+print(is_even(7))
+
+print()
 # ============================================================
 # Task 5 — sorted() versus list.sort()
 # ============================================================
@@ -139,7 +185,20 @@ Use only concepts covered in Lecture 06 and earlier lectures.
 
 # Write your code below:
 
+numbers = [8, 3, 10, 1, 6]
 
+ordered = sorted(numbers)
+print(numbers)
+print(ordered)
+
+numbers.sort()
+print(numbers)
+
+result = numbers.sort()
+
+print(result)
+
+print()
 # ============================================================
 # Task 6 — Descending order
 # ============================================================
@@ -160,7 +219,13 @@ Use only concepts covered in Lecture 06 and earlier lectures.
 
 # Write your code below:
 
+scores = [82, 95, 73, 88, 61]
+high_to_low = sorted(scores, reverse=True)
 
+print(scores)
+print(high_to_low)
+
+print()
 # ============================================================
 # Task 7 — Sorting with key
 # ============================================================
@@ -185,7 +250,15 @@ Use only concepts covered in Lecture 06 and earlier lectures.
 
 # Write your code below:
 
+words = ["pear", "watermelon", "fig", "banana", "kiwi"]
 
+shortest_first = sorted(words, key = len)
+longest_first = sorted(words, key=len, reverse=True)
+
+print(shortest_first)
+print(longest_first)
+
+print()
 # ============================================================
 # Task 8 — Case-insensitive sorting
 # ============================================================
@@ -214,7 +287,19 @@ Use only concepts covered in Lecture 06 and earlier lectures.
 
 # Write your code below:
 
+cities = [
+    "berlin",
+    "Algiers",
+    "cairo",
+    "Amsterdam",
+    "zurich"
+]
 
+ordered_cities = sorted(cities, key=str.lower)
+
+print(ordered_cities)
+
+print()
 # ============================================================
 # Task 9 — Sorting tuples with lambda
 # ============================================================
@@ -240,7 +325,18 @@ Use only concepts covered in Lecture 06 and earlier lectures.
 
 # Write your code below:
 
+students = [
+    ("Anna", 82),
+    ("Boris", 95),
+    ("Mira", 88),
+    ("Daniel", 73)
+]
 
+ordered_students = sorted(students, key = lambda student: student[1], reverse = True)
+
+print(ordered_students)
+
+print()
 # ============================================================
 # Task 10 — Filtering values
 # ============================================================
@@ -257,7 +353,13 @@ Use only concepts covered in Lecture 06 and earlier lectures.
 
 # Write your code below:
 
+scores = [45, 70, 82, 39, 91, 60, 58]
 
+passing_scores = list(filter(lambda score: score >=60, scores))
+
+print(passing_scores)
+
+print()
 # ============================================================
 # Task 11 — Transforming values with map()
 # ============================================================
@@ -278,7 +380,14 @@ Use only concepts covered in Lecture 06 and earlier lectures.
 
 # Write your code below:
 
+prices = [100, 250, 80, 40]
+new_prices = list(
+    map(lambda price: price * 1.10, prices)
+)
 
+print(new_prices)
+
+print()
 # ============================================================
 # Task 12 — Filter, sort, and map together
 # ============================================================
@@ -310,7 +419,22 @@ Use only concepts covered in Lecture 06 and earlier lectures.
 
 # Write your code below:
 
+students = [
+    {"name": "Anna", "score": 82},
+    {"name": "Boris", "score": 55},
+    {"name": "Mira", "score": 91},
+    {"name": "Daniel", "score": 67},
+    {"name": "Sara", "score": 48}
+]
 
+A_students = list(filter(lambda student: student["score"] >= 60, students))
+
+sorted_students = sorted(A_students, key = lambda student: student['score'], reverse = True)
+
+names = list(map(lambda student: student["name"], sorted_students))
+
+print("Task 12")
+print(names)
 # ============================================================
 # Task 13 — BONUS: Sort records by multiple ideas
 # ============================================================
