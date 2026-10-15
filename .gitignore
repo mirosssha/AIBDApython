@@ -1,1 +1,8 @@
 solutions
+
+.venv/
+.idea/
+__pycache__/
+*.pyc
+
+EPL_tracker/output/*.csv
